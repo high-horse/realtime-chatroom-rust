@@ -5,43 +5,49 @@
     <title>Rocket Rooms</title>
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script src="/script.js" charset="utf-8" defer></script>
   </head>
-  <body>
-    <main>
+  <body style="background-color: #7851A9;">
+    <main class="container">
       <div id="sidebar">
         <div id="status" class="pending"></div>
 
-        <div id="room-list">
+        <div id="room-list" class="mt-3">
           <template id="room">
-            <button class="room"></button>
+            <button class="room btn btn-primary btn-sm"></button>
           </template>
         </div>
 
         <form id="new-room">
-          <input type="text" name="name" id="name" autocomplete="off"
-              placeholder="new room..." maxlength="29"></input>
-          <button type="submit">+</button>
+          <span style="display: flex; margin: 5px 0;">
+            <input type="text" name="name" id="name" autocomplete="off"
+            placeholder="new room..." maxlength="29" style="width: 30%;" class="form-control"></input>
+            <button type="submit" class="btn btn-success btn-sm" style="margin-left: 10px;">+</button>
+          </span>
         </form>
       </div>
 
       <div id="content">
 
-        <div id="messages">
+        <div id="messages" style="height: 75vh; border: 2px solid black; border-radius: 10px;  overflow-y: scroll;">
           <template id="message">
-            <div class="message">
+            <div class="message" style="margin-left: 5px;">
               <span class="username"></span>
               <span class="text"></span>
             </div>
           </template>
         </div>
 
-        <form id="new-message" >
-          <input type="text" name="username" id="username" maxlength="19"
-            placeholder="guest" autocomplete="off">
-          <input type="text" name="message" id="message" autocomplete="off"
-              placeholder="Send a message..." autofocus>
-          <button type="submit" id="send">Send</button>
+        <form id="new-message"  style="margin-top: 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <input type="text" name="username" id="username" maxlength="19" class="form-control" style="width: 19%;" 
+              placeholder="guest" autocomplete="off">
+            <input type="text" name="message" id="message" autocomplete="off" class="form-control" style="width: 75%;"
+                placeholder="Send a message..." autofocus>
+            <button type="submit" class="btn btn-primary btn-sm" id="send" style="margin: 0 5px;">Send</button>
+          </div>
         </form>
       </div>
     </main>

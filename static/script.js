@@ -130,8 +130,8 @@ function init() {
   addRoom("lobby");
   addRoom("rocket");
   changeRoom("lobby");
-  addMessage("lobby", "Rocket", "Hey! Open another browser tab, send a message.", true);
-  addMessage("rocket", "Rocket", "This is another room. Neat, huh?", true);
+  addMessage("lobby", "Bot", "Hey! Open another browser tab, send a message.", true);
+  addMessage("rocket", "Bot", "This is another room. Neat, huh?", true);
 
   // Set up the form handler.
   newMessageForm.addEventListener("submit", (e) => {
